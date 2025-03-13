@@ -15,7 +15,7 @@ get_header();
 ?>
 
 	<section id="primary">
-		<main id="main">
+		<main id="main" class="bg-amber-800">
 
 			<?php
 			/* Start the Loop */
