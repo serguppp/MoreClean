@@ -1,36 +1,38 @@
 (() => {
     document.addEventListener("DOMContentLoaded", function () {
-        const header = document.getElementById("hdr");
+        const nav_br = document.getElementById("nav-br");
         const top_nav = document.getElementById("top-nav");
+        const bot_nav = document.getElementById("bot-nav");
         const subtitle = document.getElementById("subtitle");
         const hdrContent = document.getElementById("hdr-content");
+        const sm_nav = document.getElementById("sm-nav");
 
-        let isShrunk = false;
-        let ticking = false;
-
-        function handleScroll() {
-            let scrollY = window.scrollY;
-
-            if (scrollY > 100 && !isShrunk) { 
-                hdrContent.classList.add("shrink"); 
-                subtitle.classList.add("hidden");
-                top_nav.classList.add("hidden");
-                isShrunk = true;
-            } 
-            else if (scrollY < 40 && isShrunk) { 
-                hdrContent.classList.remove("shrink");
-                subtitle.classList.remove("hidden")
-                top_nav.classList.remove("hidden");
-                isShrunk = false;
-            }
-            ticking = false;
-        }
 
         window.addEventListener("scroll", function () {
-            if (!ticking) {
-                requestAnimationFrame(handleScroll);
-                ticking = true;
+
+            if (this.scrollY > 70) {
+                hdrContent.classList.remove("md:p-3")
+                hdrContent.classList.add("md:p-2")
+
+                nav_br.classList.remove("md:block");
+                subtitle.classList.remove("md:nav-element-visible")
+                top_nav.classList.remove("md:nav-element-visible");
+                subtitle.classList.add("md:nav-element-hidden")
+                top_nav.classList.add("md:nav-element-hidden");
+
+            } 
+            else {
+                hdrContent.classList.add("md:p-3")
+                hdrContent.classList.remove("md:p-2")
+
+                nav_br.classList.add("md:block");
+                subtitle.classList.add("md:nav-element-visible")
+                top_nav.classList.add("md:nav-element-visible");
+                subtitle.classList.remove("md:nav-element-hidden")
+                top_nav.classList.remove("md:nav-element-hidden");
+
             }
+            
         });
 
         const toggleButton = document.getElementById("hamburger");

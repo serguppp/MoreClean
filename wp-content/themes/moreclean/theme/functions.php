@@ -15,7 +15,7 @@ if ( ! defined( 'MORECLEAN_VERSION' ) ) {
 	 * to create your production build, the value below will be replaced in the
 	 * generated zip file with a timestamp, converted to base 36.
 	 */
-	define( 'MORECLEAN_VERSION', '0.1.0' );
+	define( 'MORECLEAN_VERSION', '0.2.0' );
 }
 
 if ( ! defined( 'MORECLEAN_TYPOGRAPHY_CLASSES' ) ) {
@@ -147,7 +147,7 @@ add_action( 'widgets_init', 'moreclean_widgets_init' );
 function moreclean_scripts() {
 	wp_enqueue_style( 'moreclean-style', get_stylesheet_uri(), array(), MORECLEAN_VERSION );
 	wp_enqueue_script( 'moreclean-script', get_template_directory_uri() . '/js/script.min.js', array(), MORECLEAN_VERSION, true );
-    wp_enqueue_script('header-script', get_template_directory_uri() . '/js/header.js?v=<?= time(); ?>', array(), null, true);
+    wp_enqueue_script('header-script', get_template_directory_uri() . '/js/header.js?v=3', array(), MORECLEAN_VERSION, true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

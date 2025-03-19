@@ -24,8 +24,6 @@
 <?php wp_body_open(); ?>
 
 <div id="page">
-	<a href="#content" class="sr-only"><?php esc_html_e( 'Skip to content', 'moreclean' ); ?></a>
-
 	<?php get_template_part( 'template-parts/layout/header', 'content' ); ?>
 
-	<div id="content" class="z-10">
+	<div id="content">

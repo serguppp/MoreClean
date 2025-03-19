@@ -10,19 +10,19 @@
 
 ?>
 
-<header id="masthead" class="sticky top-0 z-50">
-	<div id="hdr" class="bg-blue-50 shadow-md text-black roboto">
-		<div id="hdr-content" class="max-w-screen-xl flex mx-auto">
-			<div class="grid w-screen grid-cols-2 md:grid-cols-4">
+<header id="masthead" class="fixed w-full left-0 top-0 ">
+	<div id="hdr" class="bg-white shadow-2xs text-black roboto  ">
+		<div id="hdr-content" class="max-w-screen-xl mx-auto md:p-3 transition-all ease-in-out duration-500 ">
+			<div class="grid grid-cols-2 md:grid-cols-4 ">
 				<!-- Page logo  -->
-				<div class="block md:flex md:flex-wrap">
+				<div class="block items-center md:flex md:flex-wrap">
 					<a href="#" class="">
 						<p class="text-4xl font-bold">
 							Moreclean
 						</p>
-						<p id="subtitle" class="text-xl">
+						<p id="subtitle" class="text-xl nav-element-visible">
 						Pranie tapicerki
-					</p>
+						</p>
 					</a>
 				</div>
 
@@ -58,7 +58,7 @@
 				<!-- Navbar sections-->
 				<div class="hidden md:block md:w-auto md:col-span-2 w-full ">
 					<!-- Top -->
-					<div id="top-nav" class="flex justify-between">
+					<div id="top-nav" class="nav-element-visible items-center flex justify-between ">
 						<div>
 							<div class="flex flex-wrap">
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" class="w-6">
@@ -114,27 +114,27 @@
 					<!-- Top-->
 
 					<!-- br -->
-					<div class="hidden md:block h-0.25 my-1 w-[calc(100%+25%)] transform translate-x-[-7.5%] mx-auto bg-black ">
+					<div id="nav-br" class="hidden md:block h-0.25 my-1 w-[calc(100%+25%)] transform translate-x-[-7.5%] mx-auto bg-black ">
 					<!-- br -->
 
 					</div>
 					<!-- Down -->
-					<div id="bot-nav">
-						<div>
-							<nav class="absolute left-1/2 -translate-x-1/2 space-x-6">
-								<a href="#" class="hover:text-gray-900 text-l lg:text-xl">Strona główna</a>
-								<a href="#" class=" hover:text-gray-900 text-l lg:text-xl">O nas</a>
-								<a href="#" class=" hover:text-gray-900 text-l lg:text-xl">Galeria</a>
-								<a href="#" class=" hover:text-gray-900 text-l lg:text-xl">Opinie</a>
-								<a href="#" class=" hover:text-gray-900 text-l lg:text-xl">Kontakt</a>
-
-							</nav>
-						</div>
+					<div id="bot-nav" class="md:pt-2 flex mx-auto justify-center ">
+						<nav class="space-x-6">
+							<a href="#" class="hover:text-gray-900 text-l">Strona główna</a>
+							<a href="#" class=" hover:text-gray-900 text-l">O nas</a>
+							<a href="#" class=" hover:text-gray-900 text-l">Oferta</a>
+							<a href="#" class=" hover:text-gray-900 text-l">Realizacje</a>
+							<a href="#" class=" hover:text-gray-900 text-l">Cennik</a>
+							<a href="#" class=" hover:text-gray-900 text-l">Opinie</a>
+							<a href="#" class=" hover:text-gray-900 text-l">Kontakt</a>
+						</nav>
 					</div>
 					<!-- Down -->
 				</div>
-
-				<div class="hidden md:flex md:justify-end">
+				
+				<!-- Social media -->
+				<div id="sm-nav" class="hidden md:flex md:items-center md:text-center md:justify-end transition-all ease-in-out duration-500">
 					<div>
 						<a href="#!" role="button">
 							<!-- Facebook -->
@@ -161,6 +161,9 @@
 						</a>
 					</div>
 				</div>
+
+				<!-- Social media -->
+
 
 			</div>
 		</div>

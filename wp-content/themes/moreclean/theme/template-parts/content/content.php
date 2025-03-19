@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying posts
  *
@@ -9,38 +10,13 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div style="position: relative; width: 100vw; height: 100vh;">
+    <img src="wp-content/themes/moreclean/theme/img/main2.jpg" 
+        style="position: relative; top: 68px; left: 0; width: 100%; height: 100%; 
+               object-fit: cover; object-position: center center; z-index: -1;" 
+        alt="img">
+</div>
 
-	<header class="entry-header">
-		<?php
-		if ( is_sticky() && is_home() && ! is_paged() ) {
-			printf( '<span">%s</span>', esc_html_x( 'Featured', 'post', 'moreclean' ) );
-		}
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
-		endif;
-		?>
-	</header><!-- .entry-header -->
-
-	<?php moreclean_post_thumbnail(); ?>
-
-	<div <?php moreclean_content_class( 'entry-content' ); ?>>
-		<?php
-		the_content();
-
-		wp_link_pages(
-			array(
-				'before' => '<div>' . __( 'Pages:', 'moreclean' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php moreclean_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-
-</article><!-- #post-${ID} -->
+<!-- Sekcja z treścią pod obrazkiem -->
+<div style="top:68px; text-align: center; font-family: Arial, sans-serif;">
+    <h1 style="font-size: 36px; margin-bottom: 20px;">Witaj
