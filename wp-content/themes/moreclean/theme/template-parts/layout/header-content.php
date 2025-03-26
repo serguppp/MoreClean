@@ -10,20 +10,15 @@
 
 ?>
 
-<header id="masthead" class="fixed w-full left-0 top-0 ">
-	<div id="hdr" class="bg-white shadow-2xs text-black roboto  ">
-		<div id="hdr-content" class="max-w-screen-xl mx-auto md:p-3 transition-all ease-in-out duration-500 ">
-			<div class="grid grid-cols-2 md:grid-cols-4 ">
+<header id="masthead" class="fixed w-full left-0 top-0 z-1">
+	<div id="hdr" class="bg-white shadow-2xs text-black roboto">
+		<div id="hdr-content" class="max-w-screen-xl mx-auto ">
+			<div class="grid grid-cols-2 md:grid-cols-5">
 				<!-- Page logo  -->
-				<div class="block items-center md:flex md:flex-wrap">
-					<a href="#" class="">
-						<p class="text-4xl font-bold">
-							Moreclean
-						</p>
-						<p id="subtitle" class="text-xl nav-element-visible">
-						Pranie tapicerki
-						</p>
-					</a>
+				<div id="logo" class="flex items-center ">
+					<button id="logo-btn" class="button">
+						<img id="logo-img" class = "" src="wp-content\themes\moreclean\theme\img\logo2.jpg" alt="Logo">
+					</button>
 				</div>
 
 				<div class="flex md:hidden justify-end">
@@ -56,9 +51,9 @@
 
 				<!-- Page logo -->
 				<!-- Navbar sections-->
-				<div class="hidden md:block md:w-auto md:col-span-2 w-full ">
+				<div class="hidden my:auto md:block md:w-auto md:col-span-3 w-full ">
 					<!-- Top -->
-					<div id="top-nav" class="nav-element-visible items-center flex justify-between ">
+					<div id="top-nav" class="items-center flex justify-between mx-5 ">
 						<div>
 							<div class="flex flex-wrap">
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" class="w-6">
@@ -114,13 +109,13 @@
 					<!-- Top-->
 
 					<!-- br -->
-					<div id="nav-br" class="hidden md:block h-0.25 my-1 w-[calc(100%+25%)] transform translate-x-[-7.5%] mx-auto bg-black ">
+					<div id="nav-br" class="hidden md:block h-0.25 my-1 mx-auto bg-black ">
 					<!-- br -->
 
 					</div>
 					<!-- Down -->
-					<div id="bot-nav" class="md:pt-2 flex mx-auto justify-center ">
-						<nav class="space-x-6">
+					<div id="bot-nav" class="flex justify-center items-center ">
+						<nav class="space-x-6 inline-block">
 							<a href="#" class="hover:text-gray-900 text-l">Strona główna</a>
 							<a href="#" class=" hover:text-gray-900 text-l">O nas</a>
 							<a href="#" class=" hover:text-gray-900 text-l">Oferta</a>
@@ -134,7 +129,7 @@
 				</div>
 				
 				<!-- Social media -->
-				<div id="sm-nav" class="hidden md:flex md:items-center md:text-center md:justify-end transition-all ease-in-out duration-500">
+				<div id="sm-nav" class="hidden md:flex md:items-center md:text-center md:justify-center">
 					<div>
 						<a href="#!" role="button">
 							<!-- Facebook -->

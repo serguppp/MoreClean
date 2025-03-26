@@ -1,45 +1,48 @@
 (() => {
     document.addEventListener("DOMContentLoaded", function () {
-        const nav_br = document.getElementById("nav-br");
-        const top_nav = document.getElementById("top-nav");
-        const bot_nav = document.getElementById("bot-nav");
-        const subtitle = document.getElementById("subtitle");
         const hdrContent = document.getElementById("hdr-content");
-        const sm_nav = document.getElementById("sm-nav");
+        const topNav = document.getElementById("top-nav");
+        const botNav = document.getElementById("bot-nav");
+        const navBr = document.getElementById("nav-br");
 
+        const topNavOriginalHeight = topNav.offsetHeight; 
+        const navBrOriginalHeight = navBr.offsetHeight;
+        const hdrContentCenter = hdrContent.offsetTop + hdrContent.offsetHeight / 2;
 
-        window.addEventListener("scroll", function () {
+        let ticking = false;
+        let maxScroll = 80; 
 
-            if (this.scrollY > 70) {
-                hdrContent.classList.remove("md:p-3")
-                hdrContent.classList.add("md:p-2")
+        function updateNavbar() {
+            let scrollY = Math.min(window.scrollY, maxScroll);
 
-                nav_br.classList.remove("md:block");
-                subtitle.classList.remove("md:nav-element-visible")
-                top_nav.classList.remove("md:nav-element-visible");
-                subtitle.classList.add("md:nav-element-hidden")
-                top_nav.classList.add("md:nav-element-hidden");
+            navBr.style.height = `${Math.max(0, navBrOriginalHeight - scrollY)}px`;
+            navBr.style.opacity = Math.max(0, 1 - scrollY / maxScroll);
 
-            } 
-            else {
-                hdrContent.classList.add("md:p-3")
-                hdrContent.classList.remove("md:p-2")
+            topNav.style.height = `${Math.max(0, topNavOriginalHeight - scrollY)}px`;
+            topNav.style.opacity = Math.max(0, 1 - scrollY / maxScroll);
 
-                nav_br.classList.add("md:block");
-                subtitle.classList.add("md:nav-element-visible")
-                top_nav.classList.add("md:nav-element-visible");
-                subtitle.classList.remove("md:nav-element-hidden")
-                top_nav.classList.remove("md:nav-element-hidden");
+            let botNavTargetY = hdrContentCenter - botNav.offsetHeight * 1.75;
+            botNav.style.transform = `translateY(${Math.min(scrollY, Math.max(botNavTargetY, 0))}px)`;
 
+            ticking = false;
+        }
+
+        window.addEventListener("scroll", () => {
+            if (!ticking) {
+                requestAnimationFrame(updateNavbar);
+                ticking = true;
             }
-            
-        });
+        }, { passive: true });
 
         const toggleButton = document.getElementById("hamburger");
         const menu = document.getElementById("navbar-default");
 
-        toggleButton.addEventListener("click", function () {
-            menu.classList.toggle("hidden");
+        toggleButton.addEventListener("click", () => menu.classList.toggle("hidden"));
+
+        document.addEventListener("click", (e) => {
+            if (!menu.contains(e.target) && !toggleButton.contains(e.target)) {
+                menu.classList.add("hidden");
+            }
         });
     });
 })();

@@ -24,15 +24,32 @@
  */
 @import "../custom/fonts.css";
 
-.md\:nav-element-hidden{
-        opacity: 0;
-        position: absolute;
-        pointer-events:none;
-        display:none;
-    
+
+.button {
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: all 0.5s;
 }
-.md\:nav-element-visible{
-        opacity: 1;
-        display:flex;
-    
+
+#hdr-content {
+        transition: height 0.3s ease-in-out, margin 0.3s ease-in-out, transform 0.3s ease-in-out;
+        padding-top:6px;
+        padding-bottom:6px;
 }
+    
+#top-nav {
+        transition: height 0.2s ease-in-out, opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+        height: auto;
+        overflow: hidden; 
+}
+    
+    
+#nav-br {
+        transition: height 0.25s ease-in-out, opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+    
+#bot-nav {
+        transition: transform 0.3s ease-in-out;
+}
+
