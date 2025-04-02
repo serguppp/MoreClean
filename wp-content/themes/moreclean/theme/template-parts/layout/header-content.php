@@ -10,41 +10,51 @@
 
 ?>
 
-<header id="masthead" class="fixed w-full left-0 top-0 z-1">
+<header id="masthead"  class="fixed w-full left-0 top-0 z-1">
 	<div id="hdr" class="bg-white shadow-2xs text-black roboto">
-		<div id="hdr-content" class="max-w-screen-xl mx-auto ">
+		<div  id="hdr-content" class="max-w-screen-xl mx-auto ">
 			<div class="grid grid-cols-2 md:grid-cols-5">
 				<!-- Page logo  -->
-				<div id="logo" class="flex items-center ">
+				<div id="logo" class="flex items-center ms-5 md:ms-0">
 					<button id="logo-btn" class="button">
-						<img id="logo-img" class = "" src="wp-content\themes\moreclean\theme\img\logo2.jpg" alt="Logo">
+						<img id="logo-img" class="" src="wp-content\themes\moreclean\theme\img\logo2.jpg" alt="Logo">
 					</button>
 				</div>
 
-				<div class="flex md:hidden justify-end">
-					<button id="hamburger" data-collapse-toggle="navbar-default" type="button" class="text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-						<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+				<div class="flex md:hidden justify-end  me-5">
+					<button id="hamburger" class="group inline-flex w-12 h-12 text-slate-800 bg-white text-center items-center justify-center rounded transition" aria-pressed="false" onclick="this.setAttribute('aria-pressed', !(this.getAttribute('aria-pressed') === 'true'))">
+						<span class="sr-only">Menu</span>
+						<svg class="w-6 h-6 fill-current pointer-events-none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+							<rect class="origin-center -translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-x-0 group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:rotate-[315deg]" y="7" width="16" height="2" rx="1"></rect>
+							<rect class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-[[aria-pressed=true]]:rotate-45" y="7" width="16" height="2" rx="1"></rect>
+							<rect class="origin-center translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:rotate-[135deg]" y="7" width="16" height="2" rx="1"></rect>
 						</svg>
 					</button>
+
 				</div>
 
-				<nav class="hidden col-span-2" id="navbar-default">
-					<ul class="font-medium flex flex-col p-4  mt-4 border border-gray-100 rounded-lg bg-gray-50  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+				<nav class="hidden md:hidden col-span-2" id="navbar-default">
+					<ul class="font-medium flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50">
 						<li>
-							<a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded-sm  dark:text-white" aria-current="page">Home</a>
+							<a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100" aria-current="page">Strona główna</a>
 						</li>
 						<li>
-							<a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 ">About</a>
+							<a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 ">O nas</a>
 						</li>
 						<li>
-							<a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100">Services</a>
+							<a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100">Oferta</a>
 						</li>
 						<li>
-							<a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 ">Pricing</a>
+							<a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 ">Realizacje</a>
 						</li>
 						<li>
-							<a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 ">Contact</a>
+							<a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 ">Cennik</a>
+						</li>
+						<li>
+							<a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 ">Opinie</a>
+						</li>
+						<li>
+							<a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 ">Kontakt</a>
 						</li>
 					</ul>
 				</nav>
@@ -53,7 +63,7 @@
 				<!-- Navbar sections-->
 				<div class="hidden my:auto md:block md:w-auto md:col-span-3 w-full ">
 					<!-- Top -->
-					<div id="top-nav" class="items-center flex justify-between mx-5 ">
+					<div id="top-nav" class="items-center flex justify-between mx-10 ">
 						<div>
 							<div class="flex flex-wrap">
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" class="w-6">
@@ -113,27 +123,29 @@
 					<!-- br -->
 
 					</div>
-					<!-- Down -->
-					<div id="bot-nav" class="flex justify-center items-center ">
-						<nav class="space-x-6 inline-block">
-							<a href="#" class="hover:text-gray-900 text-l">Strona główna</a>
-							<a href="#" class=" hover:text-gray-900 text-l">O nas</a>
-							<a href="#" class=" hover:text-gray-900 text-l">Oferta</a>
-							<a href="#" class=" hover:text-gray-900 text-l">Realizacje</a>
-							<a href="#" class=" hover:text-gray-900 text-l">Cennik</a>
-							<a href="#" class=" hover:text-gray-900 text-l">Opinie</a>
-							<a href="#" class=" hover:text-gray-900 text-l">Kontakt</a>
+					<!-- Down --> 
+					<div id="bot-nav" class="flex justify-center items-center">
+						<nav class="inline-block whitespace-nowrap" id="nav-items">
+							<ul class="space-x-6 ">
+								<li><a href="#" class="text-black hover:text-gray-700 text-l" >Strona główna</a></li>
+								<li><a href="#" class="text-black hover:text-gray-700 text-l">O nas</a></li>
+								<li><a href="#" class="text-black hover:text-gray-700 text-l">Oferta</a></li>
+								<li><a href="#" class="text-black hover:text-gray-700 text-l">Realizacje</a></li>
+								<li><a href="#" class="text-black hover:text-gray-700 text-l">Cennik</a></li>
+								<li><a href="#" class="text-black hover:text-gray-700 text-l">Opinie</a></li>
+								<li><a href="#" class="text-black hover:text-gray-700 text-l">Kontakt</a></li>
+							</ul>
 						</nav>
 					</div>
 					<!-- Down -->
 				</div>
-				
+
 				<!-- Social media -->
 				<div id="sm-nav" class="hidden md:flex md:items-center md:text-center md:justify-center">
-					<div>
+					<div class="ms-2">
 						<a href="#!" role="button">
 							<!-- Facebook -->
-							<span class="[&>svg]:h-7 [&>svg]:w-7 [&>svg]:fill-[#1877f2]">
+							<span class="sm-icon [&>svg]:h-7 [&>svg]:w-8 hover:[&>svg]:h-9 hover:[&>svg]:w-9 [&>svg]:fill-[#1877f2]">
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
 									<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
 									<path
@@ -146,7 +158,7 @@
 					<div class="ms-2">
 						<a href="#!" role="button">
 							<!-- Instagram -->
-							<span class="[&>svg]:h-7 [&>svg]:w-7 [&>svg]:fill-[#c13584]">
+							<span class="sm-icon [&>svg]:h-8 [&>svg]:w-9 hover:[&>svg]:h-10 hover:[&>svg]:w-10 [&>svg]:fill-[#c13584]">
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
 									<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
 									<path
@@ -155,6 +167,20 @@
 							</span>
 						</a>
 					</div>
+
+
+					<div class="ms-2">
+						<a href="#!" role="button">
+							<!-- Instagram -->
+							<span class="[&>svg]:h-9 [&>svg]:w-9 hover:[&>svg]:h-11 hover:[&>svg]:w-11 [&>svg]:fill-[#ff0000]">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+									<!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+									<path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z" />
+								</svg>
+							</span>
+						</a>
+					</div>
+
 				</div>
 
 				<!-- Social media -->

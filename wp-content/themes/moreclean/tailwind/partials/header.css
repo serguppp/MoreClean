@@ -51,5 +51,39 @@
     
 #bot-nav {
         transition: transform 0.3s ease-in-out;
+        max-height: 24px;
 }
 
+nav li{
+        display: inline-block;
+        position: relative;
+}
+nav a{
+        transition: font-size 0.2s ease-in-out, color 0.2s ease-in-out; 
+}
+
+nav a:hover{
+        font-size:20px;
+}
+
+/*
+nav a::before {
+        content: '';
+        display: block;
+        height: 2px;
+        background-color: #000;
+      
+        position: absolute;
+        top: -5px;
+        width: 0%;
+      
+        transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+        width: 100%;
+}*/
+
+span svg{
+        transition: all 0.2s ease-in-out;
+}

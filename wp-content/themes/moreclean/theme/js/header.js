@@ -1,4 +1,5 @@
 (() => {
+    // navbar animation on medium+ screen
     document.addEventListener("DOMContentLoaded", function () {
         const hdrContent = document.getElementById("hdr-content");
         const topNav = document.getElementById("top-nav");
@@ -34,15 +35,14 @@
             }
         }, { passive: true });
 
+
+        //navbar animations on small screens
+
+        //hamburger 
         const toggleButton = document.getElementById("hamburger");
-        const menu = document.getElementById("navbar-default");
+        const menu = document.getElementById("bot-nav");
 
         toggleButton.addEventListener("click", () => menu.classList.toggle("hidden"));
 
-        document.addEventListener("click", (e) => {
-            if (!menu.contains(e.target) && !toggleButton.contains(e.target)) {
-                menu.classList.add("hidden");
-            }
-        });
     });
 })();
